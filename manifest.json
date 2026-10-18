@@ -1,0 +1,36 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "manifest_version": 3,
+    "name": "Fiori Automation Suite",
+    "version": "1.2",
+    "description": "Tự động điền dữ liệu từ clipboard, highlight dòng weighbridge và ghép QR code PDF.",
+    "permissions": [
+        "clipboardRead",
+        "offscreen"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.olamwebdispp.olamnet.com/*"
+            ],
+            "js": [
+                "pdf-lib.min.js",
+                "content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "pdf-lib.min.js"
+            ],
+            "matches": [
+                "https://*.olamwebdispp.olamnet.com/*"
+            ]
+        }
+    ]
+}

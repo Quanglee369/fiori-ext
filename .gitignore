@@ -1,0 +1,4 @@
+﻿node_modules/
+playwright-test/output/
+ext.rar
+_metadata/
